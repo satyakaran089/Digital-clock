@@ -2,95 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIGITAL CLOCK</title>
-   <style>
-     *{
-    margin: 0%;
-    padding: 0%;
-   font-family: 'Orbitron', sans-serif;
-
-    box-sizing: border-box;
-}
-
-.hero{
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(45deg,#08001f,#30197d);   
-    color: #fff;
-    position: relative;
-}
-.container{
-    width: 70vw;
-    height: 180px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-
-}
-.clock{
-    width: 100%;
-    height: 100%;
-    background: rgba(175, 83, 184, 0.11);
-    border-radius: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(40px);
-
-}
-.container::before{
-    content: '';
-    width: 180px;
-    height: 180px;
-    background: #f41b75;
-    border-radius: 5px;
-    position: absolute;
-    left: -50px;
-    top:-50px;
-    z-index: -1;
-    
-}
-.container::after{
-    content: '';
-    width: 180px;
-    height: 180px;
-    background: #419aff;
-    border-radius: 50%;
-    position: absolute;
-    bottom: -50px;
-    right:-30px;
-    z-index: -1;
-    
-}
-.clock span{
-    font-size: 80px;
-    width: 110px;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-}
-.clock span::before{
- 
-    font-size: 16px;
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translate(-50%);
-    
-}
-#hours::before{
-    content: 'HOURS';
-}
-#minutes::before{
-    content: 'MINUTES';
-}
-#seconds::before{
-    content: 'SECONDS';
-}
-
-   </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="hero">
@@ -104,19 +21,6 @@
         </div>
         </div>
     </div>
-    <script>
-      let hrs = document.getElementById("hours");
-let min = document.getElementById("minutes");
-let sec = document.getElementById("seconds");
-
-setInterval(()=>{
-    let currenttime = new Date();
-
-    hrs.innerHTML=(currenttime.getHours()<10?"0":"") +currenttime.getHours();
-    min.innerHTML=(currenttime.getMinutes()<10?"0":"") + currenttime.getMinutes();
-    sec.innerHTML=(currenttime.getSeconds()<10?"0":"") + currenttime.getSeconds();
-},1000)
- 
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
